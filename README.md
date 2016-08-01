@@ -7,7 +7,7 @@
 2.UA对象新增executeProcess()方法用于对userAgent进行分析
 
 #使用方法
-1.在HTML页面中引入[uadevice.min.js]()文件
+1.在HTML页面中引入[uadevice.min.js](https://github.com/VioletLife/ua-device/archive/0.0.2.zip)文件
 
 2.调用UA.executeProcess()方法。默认情况下如果不传参数，则分析当前运行环境浏览器数据。如果需要分析指定userAgent数据，传入参数即可。
 
