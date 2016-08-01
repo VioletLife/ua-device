@@ -20,7 +20,8 @@
     "ua-device"
   ],
   "devDependencies": {
-    "mocha": ">2.3.4"
+    "mocha": ">2.3.4",
+    "webpack": "^1.13.1"
   },
   "author": "Hongbin Du <duhongbin01@baidu.com>",
   "contributors": [
