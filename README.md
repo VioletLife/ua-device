@@ -1,3 +1,66 @@
+# Tips
+该版本为原版本 [userAgent解析库](http://fex.baidu.com/ua-device/)扩展版本，核心UA解析仍然使用原版本解析
+
+#特性
+1.增加window.UA对象(挂载原有的ua-device库) 
+2.UA对象新增executeProcess()方法用于对userAgent进行分析
+
+#使用方法
+1.在HTML页面中引入[uadevice.min.js]()文件
+2.调用UA.executeProcess()方法。默认情况下如果不传参数，则分析当前运行环境浏览器数据。如果需要分析指定userAgent数据，传入参数即可。
+
+#Demo
+```javascript
+<script  type="text/javascript" src="../../dist/uaDevice/uadevice.min.js"></script>
+<script>
+    var input="Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3";
+    //不带参数，默认为当前运行环境浏览器数据
+    document.getElementById("result").innerHTML=JSON.stringify(UA.executeProcess());
+    //指定UA参数
+    document.getElementById("result").innerHTML=JSON.stringify(UA.executeProcess(input));
+</script>
+```
+
+#输出结果类似以下结果
+```javascript
+{
+    "options": {
+        "useFeatures": false,
+        "detectCamouflage": true
+    },
+    "browser": {
+        "stock": false,
+        "hidden": false,
+        "channel": "",
+        "name": "Firefox",
+        "version": {
+            "original": "47.0",
+            "alias": null
+        }
+    },
+    "engine": {
+        "name": "Gecko",
+        "version": {
+            "original": "47.0",
+            "alias": null
+        }
+    },
+    "os": {
+        "name": "Windows",
+        "version": {
+            "alias": "8.1",
+            "original": "8.1"
+        }
+    },
+    "device": {
+        "type": "desktop",
+        "identified": false
+    },
+    "camouflage": false,
+    "features": []
+}
+```
+
 # ua-device [![Build Status](https://travis-ci.org/fex-team/ua-device.svg?branch=master)](https://travis-ci.org/fex-team/ua-device)
 一个用于解析UA来得到用户终端信息的JS库，详情可见[线上demo](http://fex.baidu.com/ua-device/)
 
